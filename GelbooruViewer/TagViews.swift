@@ -7,14 +7,15 @@
 
 import SwiftUI
 import SwiftData
+import Combine
 
 struct TagsView: View {
-    var tags: [String]
+    var tags: Set<String>
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack {
-                ForEach(tags, id: \.self) { tag in
+                ForEach(Array(tags), id: \.self) { tag in
                     Text(tag)
                         .padding(.horizontal, 10)
                         .padding(.vertical, 5)
@@ -28,7 +29,59 @@ struct TagsView: View {
     }
 }
 
-struct TagSelectionView : View {
+struct EditableTagsView: View {
+    @Binding var tags: Set<String>
+    @State private var tagText: String = ""
+    
+    var body: some View {
+        VStack {
+            //We cant use TagsView because we also want to be able to remove tags
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack {
+                    ForEach(Array(tags), id: \.self) { tag in
+                        Text(tag)
+                            .padding(.horizontal, 10)
+                            .padding(.vertical, 5)
+                            .background({() -> Color in
+                                if tag.starts(with: "-") {
+                                    return Color.red
+                                } else if tag.starts(with: "rating:") {
+                                    return Color.gray
+                                } else {
+                                    return Color.blue
+                                }
+                            }())
+                            .cornerRadius(5)
+                            .foregroundColor(.white)
+                            .font(.footnote)
+                            .onTapGesture {
+                                if !tag.starts(with: "rating:") && !tag.starts(with: "-rating:") {
+                                    tags.remove(tag)
+                                }
+                            }
+                    }
+                }
+            }
+            
+            HStack {
+                TextField("Add tag", text: $tagText)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                
+                Button(action: {
+                    if !tagText.isEmpty {
+                        tags.insert(tagText)
+                        tagText = ""
+                    }
+                }) {
+                    Image(systemName: "plus.circle.fill")
+                        .font(.title)
+                }
+            }
+        }
+    }
+}
+
+struct TagSelectionView: View {
     @Query var cachedTags: [TagModel]
     @Environment(\.modelContext) var modelContext
     let gelbooru: Gelbooru
@@ -39,6 +92,8 @@ struct TagSelectionView : View {
     
     @State private var showErrorAlert: Bool = false
     @State private var errorText: String = ""
+    @State private var currentPage: Int = 0
+    @State private var allTagsLoaded: Bool = false
     
     private var filteredTags: [TagModel] {
         if searchText.isEmpty {
@@ -48,7 +103,6 @@ struct TagSelectionView : View {
         }
     }
     
-    // Large searchable list where you can select tags
     var body: some View {
         NavigationView {
             List {
@@ -63,13 +117,16 @@ struct TagSelectionView : View {
                         HStack {
                             Text(tagModel.tag)
                                 .onAppear {
-                                    if tagModel == cachedTags.last && !isLoading {
-                                        Task {
-                                            await populateTags()
-                                        }
+                                    if tagModel == filteredTags.last && !isLoading && searchText.isEmpty && !allTagsLoaded {
+                                        loadMoreTags()
                                     }
                                 }
                             Spacer()
+                            
+                            Text("\(tagModel.count)")
+                                .foregroundColor(.secondary)
+                                .font(.caption)
+                            
                             if selectedTags.contains(tagModel.tag) {
                                 Image(systemName: "checkmark")
                             }
@@ -83,13 +140,16 @@ struct TagSelectionView : View {
                         .padding()
                 }
             }
-            .searchable(text: $searchText)
-            .navigationTitle("Select Tags")
+            .searchable(text: $searchText, prompt: "Search Tags")
+            .onChange(of: searchText) { newValue in
+                if newValue.isEmpty && !allTagsLoaded {
+                    loadMoreTags()
+                }
+            }
+            .navigationTitle("Select Tags, \(cachedTags.count) found")
             .onAppear {
-                Task {
-                    if cachedTags.isEmpty {
-                        await populateTags()
-                    }
+                if cachedTags.isEmpty {
+                    loadMoreTags()
                 }
             }
             .alert(isPresented: $showErrorAlert) {
@@ -102,35 +162,36 @@ struct TagSelectionView : View {
         }
     }
     
-    private func populateTags() async {
-        if isLoading { return }
+    private func loadMoreTags() {
+        guard !isLoading else { return }
         isLoading = true
-        
-        //There are ~10098 pages. No that is not a typo. Ten thousand ninety eight pages.
-        //That means we are doing 10098 GET requests.
-        //Theres no way apple will approve this
-        do {
-            //start at the latest page that was cached
-            var page = cachedTags.count
-            while true {
-                let newTags = try await gelbooru.getTags(pageID: page)
-                if newTags == nil || newTags!.isEmpty {
-                    break
+
+        Task {
+            do {
+                let newTags = try await gelbooru.getTags(pageID: currentPage)
+                if let newTags = newTags, !newTags.isEmpty {
+                    for tag in newTags {
+                        if !cachedTags.contains(where: { $0.id == tag.id }) {
+                            let newTagModel = TagModel(tag: tag.name, id: tag.id, count: tag.count)
+                            modelContext.insert(newTagModel)
+                        } else {
+                            print("Tag \(tag.name) already exists")
+                        }
+                    }
+                    currentPage += 1
+                    try modelContext.save()
+                } else {
+                    allTagsLoaded = true
                 }
-                
-                for tag in newTags! {
-                    let newTagModel = TagModel(tag: tag.name, id: tag.id, count: tag.count)
-                    modelContext.insert(newTagModel)
-                }
-                
-                page += 1
-                try modelContext.save()
+            } catch {
+                errorText = error.localizedDescription
+                showErrorAlert = true
             }
-        } catch {
-            errorText = error.localizedDescription
-            showErrorAlert = true
+            isLoading = false
         }
-        
-        isLoading = false
     }
+}
+
+#Preview {
+    TagSelectionView(gelbooru: Gelbooru(apiKey: "", userID: ""), selectedTags: .constant([ "kagamine_rin", "1girl" ]))
 }

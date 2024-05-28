@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "8D418B27-99A1-4C85-A95E-2B57D775AFCC"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "465510EC-01C9-4DC2-9F6B-4498959B9A23"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GelbooruViewer/Gelbooru.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "266"
+            endingLineNumber = "266"
+            landmarkName = "getPosts(tags:limit:page:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "465510EC-01C9-4DC2-9F6B-4498959B9A23 - 4e51b2e7545dadbe"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for GelbooruViewer.Gelbooru.getPosts(tags: Swift.Set&lt;Swift.String&gt;, limit: Swift.Int, page: Swift.Int) async throws -&gt; Swift.Array&lt;GelbooruViewer.Post&gt;"
+                  moduleName = "GelbooruViewer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/frityet/Documents/GelbooruViewer/GelbooruViewer/Gelbooru.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "266"
+                  endingLineNumber = "266"
+                  offsetFromSymbolStart = "536">
+               </Location>
+               <Location
+                  uuid = "465510EC-01C9-4DC2-9F6B-4498959B9A23 - 4e51b2e7545dadbe"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for GelbooruViewer.Gelbooru.getPosts(tags: Swift.Set&lt;Swift.String&gt;, limit: Swift.Int, page: Swift.Int) async throws -&gt; Swift.Array&lt;GelbooruViewer.Post&gt;"
+                  moduleName = "GelbooruViewer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/frityet/Documents/GelbooruViewer/GelbooruViewer/Gelbooru.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "266"
+                  endingLineNumber = "266"
+                  offsetFromSymbolStart = "476">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9D68FE24-1059-407F-841D-388032A7B8D9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GelbooruViewer/Gelbooru.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "267"
+            endingLineNumber = "267"
+            landmarkName = "getPosts(tags:limit:page:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "9D68FE24-1059-407F-841D-388032A7B8D9 - 4e51b2e7545dac41"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for GelbooruViewer.Gelbooru.getPosts(tags: Swift.Set&lt;Swift.String&gt;, limit: Swift.Int, page: Swift.Int) async throws -&gt; Swift.Array&lt;GelbooruViewer.Post&gt;"
+                  moduleName = "GelbooruViewer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/frityet/Documents/GelbooruViewer/GelbooruViewer/Gelbooru.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "267"
+                  endingLineNumber = "267"
+                  offsetFromSymbolStart = "1144">
+               </Location>
+               <Location
+                  uuid = "9D68FE24-1059-407F-841D-388032A7B8D9 - 74e7af8196cafc76"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for GelbooruViewer.Gelbooru.getPosts(tags: Swift.Set&lt;Swift.String&gt;, limit: Swift.Int, page: Swift.Int) async throws -&gt; Swift.Array&lt;GelbooruViewer.Post&gt;"
+                  moduleName = "GelbooruViewer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/frityet/Documents/GelbooruViewer/GelbooruViewer/Gelbooru.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "267"
+                  endingLineNumber = "267"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "9D68FE24-1059-407F-841D-388032A7B8D9 - 82afe4fbbe74f05f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for GelbooruViewer.Gelbooru.getPosts(tags: Swift.Set&lt;Swift.String&gt;, limit: Swift.Int, page: Swift.Int) async throws -&gt; Swift.Array&lt;GelbooruViewer.Post&gt;"
+                  moduleName = "GelbooruViewer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/frityet/Documents/GelbooruViewer/GelbooruViewer/Gelbooru.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "267"
+                  endingLineNumber = "267"
+                  offsetFromSymbolStart = "152">
+               </Location>
+               <Location
+                  uuid = "9D68FE24-1059-407F-841D-388032A7B8D9 - 2138cdfa7487925e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for GelbooruViewer.Gelbooru.getPosts(tags: Swift.Set&lt;Swift.String&gt;, limit: Swift.Int, page: Swift.Int) async throws -&gt; Swift.Array&lt;GelbooruViewer.Post&gt;"
+                  moduleName = "GelbooruViewer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/frityet/Documents/GelbooruViewer/GelbooruViewer/Gelbooru.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "267"
+                  endingLineNumber = "267"
+                  offsetFromSymbolStart = "100">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "37031FE6-A1CA-4FDC-8595-8C19DAAA4214"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GelbooruViewer/Gelbooru.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "268"
+            endingLineNumber = "268"
+            landmarkName = "getPosts(tags:limit:page:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

@@ -15,7 +15,7 @@ struct FullImageView: View {
     var body: some View {
         VStack {
             AsyncImage(url: URL(string: imageURL)) { phase in
-                switch phase {
+            switch phase {
                 case .empty:
                     ProgressView()
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -98,11 +98,6 @@ struct RatingView : View {
                 .background(Color.blue)
                 .foregroundColor(.white)
                 .cornerRadius(5)
-        case .safe:
-            return Text("Safe")
-                .background(.green)
-                .foregroundColor(.white)
-                .cornerRadius(5)
         case .questionable:
             return Text("Questionable")
                 .background(.orange)
@@ -128,7 +123,7 @@ struct PostView : View {
     @State private var showErrorAlert = false
     @State private var errorMessage: String? = nil
     var post: Post
-    @Namespace private var animationNamespace
+    var namespace: Namespace.ID
 
     public var body: some View {
         VStack(alignment: .leading, spacing: 10) {
@@ -152,7 +147,7 @@ struct PostView : View {
                         .aspectRatio(contentMode: .fit)
                         .frame(maxWidth: .infinity, maxHeight: 200)
                         .cornerRadius(10)
-                        .matchedGeometryEffect(id: post.id, in: animationNamespace)
+                        .matchedGeometryEffect(id: post.id, in: namespace)
                         .onTapGesture {
                             showFullImage.toggle()
                         }
@@ -162,7 +157,7 @@ struct PostView : View {
                         .aspectRatio(contentMode: .fit)
                         .frame(maxWidth: .infinity, maxHeight: 200)
                         .foregroundColor(.gray)
-                        .matchedGeometryEffect(id: post.id, in: animationNamespace)
+                        .matchedGeometryEffect(id: post.id, in: namespace)
                         .onTapGesture {
                             showFullImage.toggle()
                         }
@@ -181,7 +176,7 @@ struct PostView : View {
 
                     let data: Data
                     do {
-                        data = try Data(contentsOf: url)
+                        data = try await URLSession.shared.data(from: url).0
                     } catch {
                         errorMessage = "Failed to download image: \(error.localizedDescription)"
                         showErrorAlert = true
@@ -211,14 +206,14 @@ struct PostView : View {
         .shadow(color: Color(.black).opacity(0.1), radius: 5, x: 0, y: 5)
         .padding([.horizontal, .top])
         .fullScreenCover(isPresented: $showFullImage) {
-            FullImageView(imageURL: post.fileURL, animationNamespace: animationNamespace)
+            FullImageView(imageURL: post.fileURL, animationNamespace: namespace)
         }
     }
 }
 
-
-#Preview {
-    PostView(post: Post(id: 100, tags: ["tag1", "tag2"], fileURL: "https://img3.gelbooru.com//images/4a/81/4a8120e516f2440fb0484b3b18d09fa5.png", rating: .safe))
-        .previewLayout(.sizeThatFits)
-        .padding(10)
-}
+//
+//#Preview {
+//    PostView(post: Post(id: 100, tags: ["tag1", "tag2"], fileURL: "https://img3.gelbooru.com//images/4a/81/4a8120e516f2440fb0484b3b18d09fa5.png", rating: .general))
+//        .previewLayout(.sizeThatFits)
+//        .padding(10)
+//}

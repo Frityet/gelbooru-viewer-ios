@@ -9,7 +9,7 @@ import Foundation
 
 public struct Post: Decodable, Equatable {
     public enum Rating: String, Decodable, CaseIterable {
-        case safe
+//        case safe
         case general
         case sensitive
         case questionable
@@ -33,7 +33,7 @@ public struct Post: Decodable, Equatable {
     public let sample: Int
     public let previewHeight: Int
     public let previewWidth: Int
-    public let tags: [String]
+    public let tags: Set<String>
     public let title: String?
     public let hasNotes: String?
     public let hasComments: String?
@@ -110,7 +110,7 @@ public struct Post: Decodable, Equatable {
         sample               = try container.decode(Int.self, forKey: .sample)
         previewHeight        = try container.decode(Int.self, forKey: .previewHeight)
         previewWidth         = try container.decode(Int.self, forKey: .previewWidth)
-        tags                 = (try container.decode(String.self, forKey: .tags)).split(separator: " ").map { String($0) }
+        tags                 = Set<String>((try container.decode(String.self, forKey: .tags)).split(separator: " ").map { String($0) })
         title                = try container.decodeIfPresent(String.self, forKey: .title)
 
         let notes            = try container.decode(String.self, forKey: .hasNotes)
@@ -130,7 +130,7 @@ public struct Post: Decodable, Equatable {
     }
 
     //just for previews
-    public init(id: Int, tags: [String], fileURL: String, rating: Rating)
+    public init(id: Int, tags: Set<String>, fileURL: String, rating: Rating)
     {
         self.id = id
         self.tags = tags
@@ -283,7 +283,5 @@ public struct Gelbooru {
 
         return try JSONDecoder().decode(TagListResponse.self, from: data).tag
     }
-    
 
- 
 }
