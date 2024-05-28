@@ -11,7 +11,36 @@
 		C34CC7092C04764100418CF7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34CC7082C04764100418CF7 /* ContentView.swift */; };
 		C34CC70B2C04764300418CF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C34CC70A2C04764300418CF7 /* Assets.xcassets */; };
 		C34CC70E2C04764300418CF7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C34CC70D2C04764300418CF7 /* Preview Assets.xcassets */; };
+		C34CC7802C04809100418CF7 /* Gelbooru.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34CC77D2C04809100418CF7 /* Gelbooru.swift */; };
+		C34CC7842C0481D100418CF7 /* SwiftData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C34CC7832C0481D100418CF7 /* SwiftData.framework */; };
+		C34CC7862C04E34900418CF7 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34CC7852C04E34900418CF7 /* Keychain.swift */; };
+		C39CFDDD2C04F92C0083ACDC /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39CFDDC2C04F92C0083ACDC /* PostView.swift */; };
+		C39CFDE02C0518FC0083ACDC /* SetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39CFDDF2C0518FC0083ACDC /* SetupView.swift */; };
+		C3D4F6702C0539A90099F48F /* TagViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D4F66F2C0539A90099F48F /* TagViews.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C34CC72E2C0478BD00418CF7 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C34CC74E2C04793E00418CF7 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		C34CC7032C04764100418CF7 /* GelbooruViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GelbooruViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -19,6 +48,15 @@
 		C34CC7082C04764100418CF7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C34CC70A2C04764300418CF7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C34CC70D2C04764300418CF7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C34CC71C2C0478B800418CF7 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		C34CC71E2C0478B900418CF7 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		C34CC77D2C04809100418CF7 /* Gelbooru.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gelbooru.swift; sourceTree = "<group>"; };
+		C34CC7832C0481D100418CF7 /* SwiftData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftData.framework; path = System/Library/Frameworks/SwiftData.framework; sourceTree = SDKROOT; };
+		C34CC7852C04E34900418CF7 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
+		C39CFDDC2C04F92C0083ACDC /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
+		C39CFDDE2C0515030083ACDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		C39CFDDF2C0518FC0083ACDC /* SetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupView.swift; sourceTree = "<group>"; };
+		C3D4F66F2C0539A90099F48F /* TagViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagViews.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C34CC7842C0481D100418CF7 /* SwiftData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -36,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				C34CC7052C04764100418CF7 /* GelbooruViewer */,
+				C34CC71B2C0478B800418CF7 /* Frameworks */,
 				C34CC7042C04764100418CF7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -51,10 +91,16 @@
 		C34CC7052C04764100418CF7 /* GelbooruViewer */ = {
 			isa = PBXGroup;
 			children = (
-				C34CC7062C04764100418CF7 /* GelbooruViewerApp.swift */,
-				C34CC7082C04764100418CF7 /* ContentView.swift */,
+				C39CFDDE2C0515030083ACDC /* Info.plist */,
+				C34CC77D2C04809100418CF7 /* Gelbooru.swift */,
+				C34CC7852C04E34900418CF7 /* Keychain.swift */,
 				C34CC70A2C04764300418CF7 /* Assets.xcassets */,
 				C34CC70C2C04764300418CF7 /* Preview Content */,
+				C39CFDDC2C04F92C0083ACDC /* PostView.swift */,
+				C39CFDDF2C0518FC0083ACDC /* SetupView.swift */,
+				C34CC7082C04764100418CF7 /* ContentView.swift */,
+				C34CC7062C04764100418CF7 /* GelbooruViewerApp.swift */,
+				C3D4F66F2C0539A90099F48F /* TagViews.swift */,
 			);
 			path = GelbooruViewer;
 			sourceTree = "<group>";
@@ -67,6 +113,16 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		C34CC71B2C0478B800418CF7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C34CC7832C0481D100418CF7 /* SwiftData.framework */,
+				C34CC71C2C0478B800418CF7 /* WidgetKit.framework */,
+				C34CC71E2C0478B900418CF7 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,6 +133,8 @@
 				C34CC6FF2C04764100418CF7 /* Sources */,
 				C34CC7002C04764100418CF7 /* Frameworks */,
 				C34CC7012C04764100418CF7 /* Resources */,
+				C34CC72E2C0478BD00418CF7 /* Embed Foundation Extensions */,
+				C34CC74E2C04793E00418CF7 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -139,6 +197,11 @@
 			files = (
 				C34CC7092C04764100418CF7 /* ContentView.swift in Sources */,
 				C34CC7072C04764100418CF7 /* GelbooruViewerApp.swift in Sources */,
+				C34CC7802C04809100418CF7 /* Gelbooru.swift in Sources */,
+				C39CFDDD2C04F92C0083ACDC /* PostView.swift in Sources */,
+				C39CFDE02C0518FC0083ACDC /* SetupView.swift in Sources */,
+				C34CC7862C04E34900418CF7 /* Keychain.swift in Sources */,
+				C3D4F6702C0539A90099F48F /* TagViews.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,6 +330,7 @@
 		C34CC7122C04764300418CF7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -275,6 +339,9 @@
 				DEVELOPMENT_TEAM = HP4TMF3R2R;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GelbooruViewer/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Gelbooru Viewer";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Required to save the photo from Gelbooru";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -296,6 +363,7 @@
 		C34CC7132C04764300418CF7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -304,6 +372,9 @@
 				DEVELOPMENT_TEAM = HP4TMF3R2R;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GelbooruViewer/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Gelbooru Viewer";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Required to save the photo from Gelbooru";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
