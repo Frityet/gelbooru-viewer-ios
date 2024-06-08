@@ -7,24 +7,25 @@
 
 import SwiftUI
 import SwiftData
+import Gelbooru
 
 struct FetchedPostsView: View {
     @Binding var fetchedPosts: [Post]
     var loadPosts: (_ reset: Bool) async -> Void
     @Binding var isLoading: Bool
     
-    var namespace: Namespace.ID
+    var animationNamespace: Namespace.ID
     
     var body: some View {
         VStack {
             if fetchedPosts.isEmpty {
-                Text("No posts fetched")
+                Text("No posts fetched, try changing your tags")
                     .padding()
             } else {
                 ScrollView {
                     LazyVStack {
                         ForEach(fetchedPosts, id: \.id) { post in
-                            PostView(post: post, namespace: namespace)
+                            PostView(post: post, animationNamespace: animationNamespace)
                                 .onAppear {
                                     if post == fetchedPosts.last && !isLoading {
                                         Task {
@@ -58,6 +59,7 @@ struct ContentView: View {
     @State private var currentPage = 0
     @State private var isLoading = false
     @State private var showFetchedPosts = false
+    @State private var randomize = false
     
     @Namespace private var animationNamespace
     
@@ -102,11 +104,21 @@ struct ContentView: View {
                         }
                     }
                     
+                    //make this into a selector between "Newest" and "Random"
+                    Toggle("Randomize", isOn: $randomize)
+                        .onChange(of: randomize) {
+                            if randomize {
+                                searchTags.insert("sort:random")
+                            } else {
+                                searchTags.remove("sort:random")
+                            }
+                        }
+                    
                     Button("Reset tag cache") {
                         do {
                             try modelContext.delete(model: TagModel.self)
                         } catch {
-                            print("Failed to delete tags: \(error)")
+                            fatalError("Failed to delete tags: \(error)")
                         }
                     }
                     .foregroundColor(.red)
@@ -121,7 +133,7 @@ struct ContentView: View {
                 
                 NavigationLink(value: showFetchedPosts, label: { EmptyView() })
                 .navigationDestination(isPresented: $showFetchedPosts) {
-                    FetchedPostsView(fetchedPosts: $fetchedPosts, loadPosts: loadPosts, isLoading: $isLoading, namespace: animationNamespace)
+                    FetchedPostsView(fetchedPosts: $fetchedPosts, loadPosts: loadPosts, isLoading: $isLoading, animationNamespace: animationNamespace)
                 }
             }
             .navigationTitle("Fetch Posts")
@@ -143,7 +155,7 @@ struct ContentView: View {
             fetchedPosts.append(contentsOf: newPosts)
             currentPage += 1
         } catch {
-            print("Failed to fetch posts: \(error)")
+            fatalError("Failed to fetch posts: \(error)")
         }
         
         isLoading = false

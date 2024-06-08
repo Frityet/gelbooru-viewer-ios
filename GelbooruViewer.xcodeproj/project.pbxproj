@@ -11,13 +11,49 @@
 		C34CC7092C04764100418CF7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34CC7082C04764100418CF7 /* ContentView.swift */; };
 		C34CC70B2C04764300418CF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C34CC70A2C04764300418CF7 /* Assets.xcassets */; };
 		C34CC70E2C04764300418CF7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C34CC70D2C04764300418CF7 /* Preview Assets.xcassets */; };
-		C34CC7802C04809100418CF7 /* Gelbooru.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34CC77D2C04809100418CF7 /* Gelbooru.swift */; };
 		C34CC7842C0481D100418CF7 /* SwiftData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C34CC7832C0481D100418CF7 /* SwiftData.framework */; };
 		C34CC7862C04E34900418CF7 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34CC7852C04E34900418CF7 /* Keychain.swift */; };
+		C36698F22C07D50A007EDB5A /* ImageViewer in Frameworks */ = {isa = PBXBuildFile; productRef = C36698F12C07D50A007EDB5A /* ImageViewer */; };
+		C36698F42C07D50A007EDB5A /* ImageViewerRemote in Frameworks */ = {isa = PBXBuildFile; productRef = C36698F32C07D50A007EDB5A /* ImageViewerRemote */; };
+		C36698FA2C07D92F007EDB5A /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C34CC71C2C0478B800418CF7 /* WidgetKit.framework */; };
+		C36698FB2C07D92F007EDB5A /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C34CC71E2C0478B900418CF7 /* SwiftUI.framework */; };
+		C36698FE2C07D92F007EDB5A /* RandomImagesBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36698FD2C07D92F007EDB5A /* RandomImagesBundle.swift */; };
+		C36699002C07D92F007EDB5A /* RandomImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = C36698FF2C07D92F007EDB5A /* RandomImages.swift */; };
+		C36699022C07D932007EDB5A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C36699012C07D932007EDB5A /* Assets.xcassets */; };
+		C36699062C07D932007EDB5A /* RandomImagesExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = C36698F92C07D92F007EDB5A /* RandomImagesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C36699372C07E422007EDB5A /* Gelbooru.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C36699312C07E422007EDB5A /* Gelbooru.framework */; };
+		C36699382C07E422007EDB5A /* Gelbooru.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C36699312C07E422007EDB5A /* Gelbooru.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		C366993C2C07E429007EDB5A /* Gelbooru.swift in Sources */ = {isa = PBXBuildFile; fileRef = C34CC77D2C04809100418CF7 /* Gelbooru.swift */; };
+		C366993D2C07E46F007EDB5A /* Gelbooru.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C36699312C07E422007EDB5A /* Gelbooru.framework */; };
+		C366993E2C07E46F007EDB5A /* Gelbooru.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = C36699312C07E422007EDB5A /* Gelbooru.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		C39CFDDD2C04F92C0083ACDC /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39CFDDC2C04F92C0083ACDC /* PostView.swift */; };
 		C39CFDE02C0518FC0083ACDC /* SetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39CFDDF2C0518FC0083ACDC /* SetupView.swift */; };
 		C3D4F6702C0539A90099F48F /* TagViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D4F66F2C0539A90099F48F /* TagViews.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C36699042C07D932007EDB5A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C34CC6FB2C04764000418CF7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C36698F82C07D92F007EDB5A;
+			remoteInfo = RandomImagesExtension;
+		};
+		C36699352C07E422007EDB5A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C34CC6FB2C04764000418CF7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C36699302C07E422007EDB5A;
+			remoteInfo = Gelbooru;
+		};
+		C366993F2C07E46F007EDB5A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C34CC6FB2C04764000418CF7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C36699302C07E422007EDB5A;
+			remoteInfo = Gelbooru;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		C34CC72E2C0478BD00418CF7 /* Embed Foundation Extensions */ = {
@@ -26,6 +62,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				C36699062C07D932007EDB5A /* RandomImagesExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -36,6 +73,18 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				C36699382C07E422007EDB5A /* Gelbooru.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C36699412C07E46F007EDB5A /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C366993E2C07E46F007EDB5A /* Gelbooru.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -53,6 +102,12 @@
 		C34CC77D2C04809100418CF7 /* Gelbooru.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gelbooru.swift; sourceTree = "<group>"; };
 		C34CC7832C0481D100418CF7 /* SwiftData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftData.framework; path = System/Library/Frameworks/SwiftData.framework; sourceTree = SDKROOT; };
 		C34CC7852C04E34900418CF7 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
+		C36698F92C07D92F007EDB5A /* RandomImagesExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = RandomImagesExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		C36698FD2C07D92F007EDB5A /* RandomImagesBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomImagesBundle.swift; sourceTree = "<group>"; };
+		C36698FF2C07D92F007EDB5A /* RandomImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomImages.swift; sourceTree = "<group>"; };
+		C36699012C07D932007EDB5A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C36699032C07D932007EDB5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C36699312C07E422007EDB5A /* Gelbooru.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Gelbooru.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C39CFDDC2C04F92C0083ACDC /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
 		C39CFDDE2C0515030083ACDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		C39CFDDF2C0518FC0083ACDC /* SetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupView.swift; sourceTree = "<group>"; };
@@ -64,7 +119,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C36698F42C07D50A007EDB5A /* ImageViewerRemote in Frameworks */,
+				C36699372C07E422007EDB5A /* Gelbooru.framework in Frameworks */,
 				C34CC7842C0481D100418CF7 /* SwiftData.framework in Frameworks */,
+				C36698F22C07D50A007EDB5A /* ImageViewer in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C36698F62C07D92F007EDB5A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C36698FB2C07D92F007EDB5A /* SwiftUI.framework in Frameworks */,
+				C36698FA2C07D92F007EDB5A /* WidgetKit.framework in Frameworks */,
+				C366993D2C07E46F007EDB5A /* Gelbooru.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C366992E2C07E422007EDB5A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +150,8 @@
 			isa = PBXGroup;
 			children = (
 				C34CC7052C04764100418CF7 /* GelbooruViewer */,
+				C36698FC2C07D92F007EDB5A /* RandomImages */,
+				C36699322C07E422007EDB5A /* Gelbooru */,
 				C34CC71B2C0478B800418CF7 /* Frameworks */,
 				C34CC7042C04764100418CF7 /* Products */,
 			);
@@ -84,6 +161,8 @@
 			isa = PBXGroup;
 			children = (
 				C34CC7032C04764100418CF7 /* GelbooruViewer.app */,
+				C36698F92C07D92F007EDB5A /* RandomImagesExtension.appex */,
+				C36699312C07E422007EDB5A /* Gelbooru.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -92,7 +171,6 @@
 			isa = PBXGroup;
 			children = (
 				C39CFDDE2C0515030083ACDC /* Info.plist */,
-				C34CC77D2C04809100418CF7 /* Gelbooru.swift */,
 				C34CC7852C04E34900418CF7 /* Keychain.swift */,
 				C34CC70A2C04764300418CF7 /* Assets.xcassets */,
 				C34CC70C2C04764300418CF7 /* Preview Content */,
@@ -123,7 +201,36 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C36698FC2C07D92F007EDB5A /* RandomImages */ = {
+			isa = PBXGroup;
+			children = (
+				C36698FD2C07D92F007EDB5A /* RandomImagesBundle.swift */,
+				C36698FF2C07D92F007EDB5A /* RandomImages.swift */,
+				C36699012C07D932007EDB5A /* Assets.xcassets */,
+				C36699032C07D932007EDB5A /* Info.plist */,
+			);
+			path = RandomImages;
+			sourceTree = "<group>";
+		};
+		C36699322C07E422007EDB5A /* Gelbooru */ = {
+			isa = PBXGroup;
+			children = (
+				C34CC77D2C04809100418CF7 /* Gelbooru.swift */,
+			);
+			path = Gelbooru;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		C366992C2C07E422007EDB5A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		C34CC7022C04764100418CF7 /* GelbooruViewer */ = {
@@ -139,11 +246,54 @@
 			buildRules = (
 			);
 			dependencies = (
+				C36699052C07D932007EDB5A /* PBXTargetDependency */,
+				C36699362C07E422007EDB5A /* PBXTargetDependency */,
 			);
 			name = GelbooruViewer;
+			packageProductDependencies = (
+				C36698F12C07D50A007EDB5A /* ImageViewer */,
+				C36698F32C07D50A007EDB5A /* ImageViewerRemote */,
+			);
 			productName = GelbooruViewer;
 			productReference = C34CC7032C04764100418CF7 /* GelbooruViewer.app */;
 			productType = "com.apple.product-type.application";
+		};
+		C36698F82C07D92F007EDB5A /* RandomImagesExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C36699072C07D932007EDB5A /* Build configuration list for PBXNativeTarget "RandomImagesExtension" */;
+			buildPhases = (
+				C36698F52C07D92F007EDB5A /* Sources */,
+				C36698F62C07D92F007EDB5A /* Frameworks */,
+				C36698F72C07D92F007EDB5A /* Resources */,
+				C36699412C07E46F007EDB5A /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C36699402C07E46F007EDB5A /* PBXTargetDependency */,
+			);
+			name = RandomImagesExtension;
+			productName = RandomImagesExtension;
+			productReference = C36698F92C07D92F007EDB5A /* RandomImagesExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		C36699302C07E422007EDB5A /* Gelbooru */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C36699392C07E422007EDB5A /* Build configuration list for PBXNativeTarget "Gelbooru" */;
+			buildPhases = (
+				C366992C2C07E422007EDB5A /* Headers */,
+				C366992D2C07E422007EDB5A /* Sources */,
+				C366992E2C07E422007EDB5A /* Frameworks */,
+				C366992F2C07E422007EDB5A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Gelbooru;
+			productName = Gelbooru;
+			productReference = C36699312C07E422007EDB5A /* Gelbooru.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -158,6 +308,12 @@
 					C34CC7022C04764100418CF7 = {
 						CreatedOnToolsVersion = 15.1;
 					};
+					C36698F82C07D92F007EDB5A = {
+						CreatedOnToolsVersion = 15.1;
+					};
+					C36699302C07E422007EDB5A = {
+						CreatedOnToolsVersion = 15.1;
+					};
 				};
 			};
 			buildConfigurationList = C34CC6FE2C04764000418CF7 /* Build configuration list for PBXProject "GelbooruViewer" */;
@@ -169,11 +325,16 @@
 				Base,
 			);
 			mainGroup = C34CC6FA2C04764000418CF7;
+			packageReferences = (
+				C36698F02C07D50A007EDB5A /* XCRemoteSwiftPackageReference "swiftui-image-viewer" */,
+			);
 			productRefGroup = C34CC7042C04764100418CF7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				C34CC7022C04764100418CF7 /* GelbooruViewer */,
+				C36698F82C07D92F007EDB5A /* RandomImagesExtension */,
+				C36699302C07E422007EDB5A /* Gelbooru */,
 			);
 		};
 /* End PBXProject section */
@@ -188,6 +349,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C36698F72C07D92F007EDB5A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C36699022C07D932007EDB5A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C366992F2C07E422007EDB5A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -197,7 +373,6 @@
 			files = (
 				C34CC7092C04764100418CF7 /* ContentView.swift in Sources */,
 				C34CC7072C04764100418CF7 /* GelbooruViewerApp.swift in Sources */,
-				C34CC7802C04809100418CF7 /* Gelbooru.swift in Sources */,
 				C39CFDDD2C04F92C0083ACDC /* PostView.swift in Sources */,
 				C39CFDE02C0518FC0083ACDC /* SetupView.swift in Sources */,
 				C34CC7862C04E34900418CF7 /* Keychain.swift in Sources */,
@@ -205,7 +380,42 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C36698F52C07D92F007EDB5A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C36699002C07D92F007EDB5A /* RandomImages.swift in Sources */,
+				C36698FE2C07D92F007EDB5A /* RandomImagesBundle.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C366992D2C07E422007EDB5A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C366993C2C07E429007EDB5A /* Gelbooru.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C36699052C07D932007EDB5A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C36698F82C07D92F007EDB5A /* RandomImagesExtension */;
+			targetProxy = C36699042C07D932007EDB5A /* PBXContainerItemProxy */;
+		};
+		C36699362C07E422007EDB5A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C36699302C07E422007EDB5A /* Gelbooru */;
+			targetProxy = C36699352C07E422007EDB5A /* PBXContainerItemProxy */;
+		};
+		C36699402C07E46F007EDB5A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C36699302C07E422007EDB5A /* Gelbooru */;
+			targetProxy = C366993F2C07E46F007EDB5A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		C34CC70F2C04764300418CF7 /* Debug */ = {
@@ -393,6 +603,140 @@
 			};
 			name = Release;
 		};
+		C36699082C07D932007EDB5A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HP4TMF3R2R;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RandomImages/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = RandomImages;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.frityet.GelbooruViewer.RandomImages;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C36699092C07D932007EDB5A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HP4TMF3R2R;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = RandomImages/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = RandomImages;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = net.frityet.GelbooruViewer.RandomImages;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C366993A2C07E422007EDB5A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = HP4TMF3R2R;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = (
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.6;
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = net.frityet.Gelbooru;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = auto;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C366993B2C07E422007EDB5A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = HP4TMF3R2R;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = (
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 13.6;
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = net.frityet.Gelbooru;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = auto;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -414,7 +758,49 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		C36699072C07D932007EDB5A /* Build configuration list for PBXNativeTarget "RandomImagesExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C36699082C07D932007EDB5A /* Debug */,
+				C36699092C07D932007EDB5A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C36699392C07E422007EDB5A /* Build configuration list for PBXNativeTarget "Gelbooru" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C366993A2C07E422007EDB5A /* Debug */,
+				C366993B2C07E422007EDB5A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C36698F02C07D50A007EDB5A /* XCRemoteSwiftPackageReference "swiftui-image-viewer" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Jake-Short/swiftui-image-viewer.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C36698F12C07D50A007EDB5A /* ImageViewer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C36698F02C07D50A007EDB5A /* XCRemoteSwiftPackageReference "swiftui-image-viewer" */;
+			productName = ImageViewer;
+		};
+		C36698F32C07D50A007EDB5A /* ImageViewerRemote */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C36698F02C07D50A007EDB5A /* XCRemoteSwiftPackageReference "swiftui-image-viewer" */;
+			productName = ImageViewerRemote;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C34CC6FB2C04764000418CF7 /* Project object */;
 }

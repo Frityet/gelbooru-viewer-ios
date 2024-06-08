@@ -8,6 +8,7 @@
 import SwiftUI
 import SwiftData
 import Combine
+import Gelbooru
 
 struct TagsView: View {
     var tags: Set<String>
@@ -33,9 +34,10 @@ struct EditableTagsView: View {
     @Binding var tags: Set<String>
     @State private var tagText: String = ""
     
+    let specialCases = Set([ "rating:", "-rating:", "sort:" ])
+    
     var body: some View {
         VStack {
-            //We cant use TagsView because we also want to be able to remove tags
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack {
                     ForEach(Array(tags), id: \.self) { tag in
@@ -47,6 +49,8 @@ struct EditableTagsView: View {
                                     return Color.red
                                 } else if tag.starts(with: "rating:") {
                                     return Color.gray
+                                } else if tag.starts(with: "sort:") {
+                                    return Color.green
                                 } else {
                                     return Color.blue
                                 }
@@ -55,7 +59,7 @@ struct EditableTagsView: View {
                             .foregroundColor(.white)
                             .font(.footnote)
                             .onTapGesture {
-                                if !tag.starts(with: "rating:") && !tag.starts(with: "-rating:") {
+                                if !specialCases.contains(tag) {
                                     tags.remove(tag)
                                 }
                             }

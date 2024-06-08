@@ -8,6 +8,7 @@
 import SwiftUI
 import SwiftData
 import Foundation
+import Gelbooru
 
 //@Model
 //class PostModel {

@@ -39,7 +39,7 @@ public struct Post: Decodable, Equatable {
     public let hasComments: String?
     public let fileURL: String
     public let previewURL: String
-    public let sampleURL: String
+    public let sampleURL: String?
     public let sampleHeight: Int
     public let sampleWidth: Int
     public let status: String?
@@ -93,36 +93,37 @@ public struct Post: Decodable, Equatable {
     public init(from decoder: Decoder) throws
     {
         let container        = try decoder.container(keyedBy: CodingKeys.self)
-        id                   = try container.decode(Int.self, forKey: .id)
-        createdAt            = try container.decode(String.self, forKey: .createdAt)
-        score                = try container.decode(Int.self, forKey: .score)
-        width                = try container.decode(Int.self, forKey: .width)
-        height               = try container.decode(Int.self, forKey: .height)
-        md5                  = try container.decode(String.self, forKey: .md5)
-        directory            = try container.decode(String.self, forKey: .directory)
-        image                = try container.decode(String.self, forKey: .image)
-        rating               = try container.decode(Rating.self, forKey: .rating)
-        source               = try container.decode(String.self, forKey: .source)
-        change               = try container.decode(Int.self, forKey: .change)
-        owner                = try container.decode(String.self, forKey: .owner)
-        creatorID            = try container.decode(Int.self, forKey: .creatorID)
-        parentID             = try container.decode(Int.self, forKey: .parentID)
-        sample               = try container.decode(Int.self, forKey: .sample)
-        previewHeight        = try container.decode(Int.self, forKey: .previewHeight)
-        previewWidth         = try container.decode(Int.self, forKey: .previewWidth)
+        id                   = try container.decode(Int.self,   forKey: .id)
+        createdAt            = try container.decode(String.self,forKey: .createdAt)
+        score                = try container.decode(Int.self,   forKey: .score)
+        width                = try container.decode(Int.self,   forKey: .width)
+        height               = try container.decode(Int.self,   forKey: .height)
+        md5                  = try container.decode(String.self,forKey: .md5)
+        directory            = try container.decode(String.self,forKey: .directory)
+        image                = try container.decode(String.self,forKey: .image)
+        rating               = try container.decode(Rating.self,forKey: .rating)
+        source               = try container.decode(String.self,forKey: .source)
+        change               = try container.decode(Int.self,   forKey: .change)
+        owner                = try container.decode(String.self,forKey: .owner)
+        creatorID            = try container.decode(Int.self,   forKey: .creatorID)
+        parentID             = try container.decode(Int.self,   forKey: .parentID)
+        sample               = try container.decode(Int.self,   forKey: .sample)
+        previewHeight        = try container.decode(Int.self,   forKey: .previewHeight)
+        previewWidth         = try container.decode(Int.self,   forKey: .previewWidth)
         tags                 = Set<String>((try container.decode(String.self, forKey: .tags)).split(separator: " ").map { String($0) })
         title                = try container.decodeIfPresent(String.self, forKey: .title)
 
-        let notes            = try container.decode(String.self, forKey: .hasNotes)
-        let comments         = try container.decode(String.self, forKey: .hasComments)
-        let children         = try container.decode(String.self, forKey: .hasChildren)
+        let notes            = try container.decode(String.self,forKey: .hasNotes)
+        let comments         = try container.decode(String.self,forKey: .hasComments)
+        let children         = try container.decode(String.self,forKey: .hasChildren)
         hasChildren         = children == "false"   ? nil : children
         hasNotes            = notes == "false"      ? nil : notes
         hasComments         = comments == "false"   ? nil : comments
 
         fileURL              = try container.decode(String.self, forKey: .fileURL)
         previewURL           = try container.decode(String.self, forKey: .previewURL)
-        sampleURL            = try container.decode(String.self, forKey: .sampleURL)
+        let surl             = try container.decode(String.self, forKey: .sampleURL)
+        sampleURL            = surl == "" ? nil : surl
         sampleHeight         = try container.decode(Int.self, forKey: .sampleHeight)
         sampleWidth          = try container.decode(Int.self, forKey: .sampleWidth)
         status               = try container.decode(String.self, forKey: .status)
